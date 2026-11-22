@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/assets/css/master.css">
+    <link rel="stylesheet" href="src/assets/css/public.css">
+</head>
+
+<body>
+    <div class="cs"></div>
+    <div class="cl"></div>
+    <header class="menu">
+        <span>mamad</span>
+        <span>kabiri</span>
+        <span>arash</span>
+    </header>
+    <section class="back">
+        <video src="src/video/ribbons.mp4" autoplay muted></video>
+        <h1 id="h1">of the sublime</h1>
+        <h6 id="h6_back">The art</h6>
+    </section>
+    <section class="sec2">
+        <h3>ahandpicked
+            collection</h3>
+        <h3>of the rarest</h3>
+        <h3>luxury homes</h3>
+        <div class="row">
+            <img src="src/img/top-small-1@xxxl.webp" alt="">
+            <img src="src/img/top-large@xxxl.webp" alt="">
+            <img src="src/img/top-small-2@xxxl.webp" alt="">
+        </div>
+    </section>
+    <section class="sec3">
+        <p>Exclusive homes
+            in Dubai’s most
+            iconic addresses.
+            For the true
+            connoisseurs</p>
+        <figure id="right">
+            <img src="src/img/bottom-right@xxxl.webp" alt="">
+        </figure>
+        <h4>of fine living</h4>
+        <figure>
+            <img src="src/img/bottom-left@xxxl.webp" alt="" id="left">
+        </figure>
+    </section>
+    <section class="sec4">
+        <video src="src/video/teaser.mp4" autoplay muted>
+        </video>
+        <h5 id="h5_group_sec4">SOME CREATIONS</h5>
+        <h5 id="h5_group_sec4_1">MERIT A PLACE</h5>
+        <h6 id="h6_group_sec4">Above The Lofty Adage Of Luxury</h6>
+    </section>
+    <section class="sec5">
+        <figure>
+            <img src="src/img/background@xxl.webp" alt="">
+        </figure>
+        <!-- <div class="bus">
+            <h6>tenets</h6>
+            <figure>
+                <video src="src/video/expensive_spaces.mp4" muted autoplay></video>
+            </figure>
+            <p>How does a home make it to the Sobha Privy Collection? We set our own benchmarks to make certain it was a
+                rigorous process. We call them the Privy Collection Tenets, and each one defines a unique and
+                unmistakable aspect that must be satisfied.</p>
+        </div> -->
+        <div class="bus2">
+            <div class="div1">
+                <figure>
+                    <video src="src/video/expensive_spaces.mp4" muted autoplay></video>
+                </figure>
+                <p>We have pushed beyond conventional boundaries in more ways than one. A Privy home features grand
+                    palatial spaces where luxury and convenience converge with equal elegance and finesse. Even in the
+                    heart of the bustling city you require a private, expansive retreat. Whether perched on a soaring
+                    tower in the sky or within an oasis of greenery, each home redefines the notion of scale.</p>
+                <span>Expansive</span>
+                <span>Spaces</span>
+            </div>
+            <div class="div2">
+                <figure>
+                    <img src="src/img/full-image-1@xxl.webp" alt="">
+                </figure>
+            </div>
+            <div class="div3">
+                <span>Iconic</span>
+                <span>Addresses</span>
+                <p>There are some locations that are known by one and all,yet little is known about their inner private worlds.The world's most iconic addresses are chosen for homes that sit at the pinnacle of success.These residences inspire awe, and stand apartfrom therestofthe city.</p>
+                <figure>
+                    <img src="src/img/image-small-1@xxxl.webp" alt="">
+                </figure>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const h1 = document.getElementById('h1')
+    const h6_back = document.getElementById('h6_back')
+    const back = document.querySelector('.back')
+    const sec2Row = document.querySelector('.row')
+    const h3_sec2 = document.querySelectorAll('.sec2>h3')
+    const menuSpan = document.querySelectorAll('.menu>span')
+    const menu = document.querySelector('.menu')
+    const sec2 = document.querySelector('.sec2')
+    const sec3 = document.querySelector('.sec3')
+    const p = document.querySelector('.sec3>p')
+    const h4Sec3 = document.querySelector('.sec3>h4')
+    const sec4 = document.querySelector('.sec4')
+    const cs = document.querySelector('.cs')
+    const cl = document.querySelector('.cl')
+    const h5sec4 = document.getElementById('h5_group_sec4')
+    const h5sec4_1 = document.getElementById('h5_group_sec4_1')
+    const h6sec4 = document.querySelector('#h6_group_sec4')
+    const sec5 = document.querySelector('.sec5')
+    const bus = document.querySelector('.bus')
+
+    addEventListener('scroll', () => {
+        let scrollTop = scrollY
+        ///////////h1,h6 back//////////////
+        if (true) {
+            h1.style.color = 'white'
+            h1.style.left = '50%'
+            h6_back.style.color = 'white'
+            h6_back.style.left = '50%'
+        }
+        //////////menu///////////////
+        if (scrollTop > sec2.offsetTop) menuSpan.forEach((val) => val.style.color = 'black')
+        else { menuSpan.forEach((val) => val.style.color = 'white') }
+        //////////////back////////////////
+        back.style.top = '-' + (scrollTop / 5) + 'px'
+        //////////sec2///////////////////////
+        if (scrollTop > 500) {
+            h3_sec2.forEach((val) => {
+                val.style.left = '50%'
+                val.style.color = 'black'
+            })
+        }
+        if (scrollTop > 1000 && scrollTop < 1500) sec2Row.style.transform = 'scale(' + (scrollTop / 1000) + ')'
+        ////////////sec3/////////////
+        if ((scrollTop + 230) >= sec3.offsetTop) {
+            p.style.color = 'black'
+            p.style.top = '0'
+            h4Sec3.style.color = 'rgba(0, 0, 0, 0.349)'
+            h4Sec3.style.top = '29%'
+        }
+        ///////////////sec4////////////
+        if (scrollTop >= sec4.offsetTop) {
+            h5sec4.style.color = 'white'
+            h5sec4_1.style.color = 'white'
+            h6sec4.style.color = 'white'
+            h5sec4.style.bottom = '15%'
+            h5sec4_1.style.bottom = '8%'
+            h6sec4.style.bottom = '6%'
+        }
+        ///////////sec5///////////////
+        console.log(scrollTop);
+
+        // if (scrollTop > 4550) {
+        //     bus.style.top = (scrollTop / 90) + '%'
+
+        //     if (scrollTop > 4800 && scrollTop < 8000) {
+        //         bus.style.position = 'fixed'
+        //         bus.style.top = '50%'
+        //         bus.style.left = (50 - (scrollTop - 4800) / 40) + '%'
+        //         bus.style.transform = 'translate(-50%, -50%)'
+        //         bus.style.width = '100%'
+        //         bus.style.height = '120vh'
+        //     }
+
+        // } else {
+        //     bus.style.position = 'absolute'
+        // }
+    })
+    ////////////cursor/////////////////////
+    addEventListener('mousemove', (e) => {
+        let scrollTop = scrollY
+        x = e.clientX
+        y = e.clientY
+        // console.log(x);
+        
+        e.preventDefault()
+        cs.style.top = y + 'px'
+        cs.style.left = x + 'px'
+        cl.style.top = y + 'px'
+        cl.style.left = x + 'px'
+        if (scrollTop > 380) {
+            cl.style.border = '1px solid black'
+            cs.style.background = 'black'
+            cs.style.border = '1px solid black'
+        } else {
+            cl.style.border = '1px solid white'
+            cs.style.background = 'white'
+            cs.style.border = '1px sloid white'
+        }
+    })
+
+    addEventListener('mousedown', () => {
+        cs.classList.add('s2')
+        cl.classList.add('s1-2')
+    })
+    addEventListener('mouseup', () => {
+        cs.classList.remove('s2')
+        cl.classList.remove('s1-2')
+    })
+    ////////////cursor/////////////////////
+</script>
+
+</html>
+<!-- https://sobha-privy-collection.com/ -->
