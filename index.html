@@ -58,7 +58,7 @@
         <figure>
             <img src="src/img/background@xxl.webp" alt="">
         </figure>
-        <!-- <div class="bus">
+        <div class="bus">
             <h6>tenets</h6>
             <figure>
                 <video src="src/video/expensive_spaces.mp4" muted autoplay></video>
@@ -66,7 +66,7 @@
             <p>How does a home make it to the Sobha Privy Collection? We set our own benchmarks to make certain it was a
                 rigorous process. We call them the Privy Collection Tenets, and each one defines a unique and
                 unmistakable aspect that must be satisfied.</p>
-        </div> -->
+        </div>
         <div class="bus2">
             <div class="div1">
                 <figure>
@@ -87,7 +87,9 @@
             <div class="div3">
                 <span>Iconic</span>
                 <span>Addresses</span>
-                <p>There are some locations that are known by one and all,yet little is known about their inner private worlds.The world's most iconic addresses are chosen for homes that sit at the pinnacle of success.These residences inspire awe, and stand apartfrom therestofthe city.</p>
+                <p>There are some locations that are known by one and all,yet little is known about their inner private
+                    worlds.The world's most iconic addresses are chosen for homes that sit at the pinnacle of
+                    success.These residences inspire awe, and stand apartfrom therestofthe city.</p>
                 <figure>
                     <img src="src/img/image-small-1@xxxl.webp" alt="">
                 </figure>
@@ -111,14 +113,22 @@
                         <img src="src/img/video-3@xxxl.webp" alt="">
                     </figure>
                 </div>
-                <p>There are some locations that are known by one and all.yet little is known about their inner private worlds.The world's most iconic addresses are chosen for homes that sit at the pinnacle of success.These residences inspire awe, and stand apart from the rest of the city.</p>
+                <p>There are some locations that are known by one and all.yet little is known about their inner private
+                    worlds.The world's most iconic addresses are chosen for homes that sit at the pinnacle of
+                    success.These residences inspire awe, and stand apart from the rest of the city.</p>
             </div>
             <div class="div6">
                 <figure>
                     <img src="src/img/full-image-3@xxxl.webp" alt="">
                 </figure>
             </div>
-            <p>Every amenity is thoughtfully curated as an extension of your unique tastes.World-class amenities that go beyond just your needs have been fine-tuned to cater to a private and elevating experience,every day.</p>
+            <div class="p">
+                <p>Every amenity is thoughtfully curated as an extension of your unique tastes.World-class amenities
+                    that go
+                    beyond just your needs have been fine-tuned to cater to a private and elevating experience,every
+                    day.
+                </p>
+            </div>
             <div class="div7">
                 <div class="rowDiv7">
                     <figure>
@@ -141,10 +151,45 @@
                 <figure><img src="src/img/image-small-4@xs.webp" alt=""></figure>
                 <figure><img src="src/img/image-small-5@xs.webp" alt=""></figure>
                 <figure><img src="src/img/image-small-6@xs.webp" alt=""></figure>
-                <p>Our single-minded focus is to make sure every moment spent at a Privy residence is handled with personal care and warmth.We pride ourselves on personalised services that anticipate your every wish,to ensure an extraordinary life.</p>
+                <p>Our single-minded focus is to make sure every moment spent at a Privy residence is handled with
+                    personal care and warmth.We pride ourselves on personalised services that anticipate your every
+                    wish,to ensure an extraordinary life.</p>
+            </div>
+            <div class="div10">
+                <figure>
+                    <video src="src/video/privacy.mp4" autoplay muted></video>
+                </figure>
+                <span>Extraordinary</span>
+                <span>Privacy</span>
+            </div>
+            <div class="p">
+                <p>We understand and value the discretion of our residents.We've ensured that every home comes with
+                    separate
+                    accessways,private floors and exclusive amenities.So,your world remains private.</p>
+            </div>
+            <div class="div11">
+                <figure>
+                    <img src="src/img/image-carousel-1@xxxl.webp" alt="">
+                </figure>
+                <figure>
+                    <img src="src/img/image-carousel-2@xxxl.webp" alt="">
+                </figure>
+                <figure>
+                    <img src="src/img/image-carousel-3@xxxl.webp" alt="">
+                </figure>
+            </div>
+            <div class="div12">
+                <figure>
+                    <video src="src/video/a_place_above.mp4" muted autoplay></video>
+                </figure>
+                <span>A cut</span>
+                <span>Above</span>
+                <p>Each jewel in this collection is a hallmark of rarity.Every address,every space and every experience
+                    have distinct aspects that set them apart.</p>
             </div>
         </div>
     </section>
+    <div class="sec6"></div>
 </body>
 <script>
     const h1 = document.getElementById('h1')
@@ -166,6 +211,26 @@
     const h6sec4 = document.querySelector('#h6_group_sec4')
     const sec5 = document.querySelector('.sec5')
     const bus = document.querySelector('.bus')
+    const bus2 = document.querySelector('.bus2')
+    const busStart = 4550;
+    const busCenter = 4800;
+    const busFadeEnd = 5000;
+    const bus2Start = 4921;
+    const bus2End = 5120;
+    const horizontalStart = 5120;
+
+    let maxScroll = 0;
+    let horizontalEnd = 0;
+
+    function updateScrollDimensions() {
+        maxScroll = bus2.scrollWidth - bus2.clientWidth;
+        horizontalEnd = horizontalStart + (maxScroll * 1.5);
+        sec5.style.height = (horizontalEnd + window.innerHeight - sec5.offsetTop) + 'px';
+    }
+
+    updateScrollDimensions();
+
+    addEventListener('resize', updateScrollDimensions)
 
     addEventListener('scroll', () => {
         let scrollTop = scrollY
@@ -207,22 +272,43 @@
         }
         ///////////sec5///////////////
         console.log(scrollTop);
+        if (scrollTop >= busStart) {
+            let progress = Math.max(0, Math.min(1, (scrollTop - busStart) / (busCenter - busStart)))
+            bus.style.opacity = '1'
+            bus.style.top = (80 - progress * 30) + '%'
+            bus.style.width = (500 + (window.innerWidth - 500) * progress) + 'px'
+            bus.style.height = (650 + (window.innerHeight - 650) * progress) + 'px'
+            if (scrollTop > busCenter) {
+                let fade = Math.max(0, Math.min(1, (scrollTop - busCenter) / (busFadeEnd - busCenter)))
+                let scale = 1 + fade * 1.2
+                bus.style.transform =
+                    `translate(-50%, -50%) scale(${scale})`
+                bus.style.opacity = 1 - fade
+            }
+        } else {
+            bus.style.top = '80%'
+            bus.style.width = '500px'
+            bus.style.height = '650px'
+            bus.style.opacity = '0'
+            bus.style.transform =
+                'translate(-50%, -50%) scale(1)'
+        }
 
-        // if (scrollTop > 4550) {
-        //     bus.style.top = (scrollTop / 90) + '%'
+        if (scrollTop >= bus2Start) {
+            let progress = Math.max(0, Math.min(1, (scrollTop - bus2Start) / (bus2End - bus2Start)))
+            bus2.style.transform =
+                `translate(-50%, -50%) scale(${progress})`
+        } else {
+            bus2.style.transform =
+                'translate(-50%, -50%) scale(0)'
+        }
 
-        //     if (scrollTop > 4800 && scrollTop < 8000) {
-        //         bus.style.position = 'fixed'
-        //         bus.style.top = '50%'
-        //         bus.style.left = (50 - (scrollTop - 4800) / 40) + '%'
-        //         bus.style.transform = 'translate(-50%, -50%)'
-        //         bus.style.width = '100%'
-        //         bus.style.height = '120vh'
-        //     }
-
-        // } else {
-        //     bus.style.position = 'absolute'
-        // }
+        if (scrollTop >= horizontalStart) {
+            let progress = Math.max(0, Math.min(1, (scrollTop - horizontalStart) / (horizontalEnd - horizontalStart)))
+            bus2.scrollLeft = maxScroll * progress;
+        } else {
+            bus2.scrollLeft = 0;
+        }
     })
     ////////////cursor/////////////////////
     addEventListener('mousemove', (e) => {
@@ -230,7 +316,7 @@
         x = e.clientX
         y = e.clientY
         // console.log(x);
-        
+
         e.preventDefault()
         cs.style.top = y + 'px'
         cs.style.left = x + 'px'
