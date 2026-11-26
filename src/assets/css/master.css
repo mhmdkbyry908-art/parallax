@@ -246,21 +246,19 @@ body {
 
 .sec5 {
     width: 100%;
-    height: 200vh;
-    /* display: flex; */
-    /* z-index: 99999; */
+    height: auto;
+    position: relative;
+    padding: 0;
+    overflow: visible;
     background-color: white;
-    padding: 80px 0;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    left: 0;
-    /* overflow: hidden; */
 
     >figure {
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        margin: 0;
+        z-index: 0;
 
         >img {
             width: 100%;
@@ -269,17 +267,25 @@ body {
         }
     }
 
-    /* >.bus {
+    >.bus {
         width: 500px;
         height: 650px;
+
         display: flex;
         align-items: center;
-        position: absolute;
+
+        position: fixed;
         top: 80%;
         left: 50%;
-        transform: translate(-50%, -50%);
+
+        transform: translate(-50%, -50%) scale(1);
+
         background-color: white;
-        transition: 1s;
+        opacity: 0;
+
+        z-index: 2;
+        pointer-events: none;
+        will-change: transform, width, height, opacity;
 
         >h6 {
             text-transform: uppercase;
@@ -318,23 +324,42 @@ body {
             bottom: 0%;
             left: 0%;
         }
-    } */
+    }
+}
+
+.bus2>* {
+    flex-shrink: 0;
 }
 
 .bus2 {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    position: relative;
-    top: 0;
-    /* left: -1000px; */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
     display: flex;
-    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    overflow-x: hidden;
     overflow-y: hidden;
+
+    background-color: white;
+
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+
+    z-index: 3;
+    pointer-events: none;
+    will-change: transform;
 
     >.div1 {
         min-width: 1600px;
         /* position: relative; */
         width: 1600px;
+
+        background-color: white;
 
         >figure {
             width: 850px;
@@ -391,6 +416,8 @@ body {
         display: flex;
         justify-content: center;
 
+        background-color: white;
+
         >figure {
             width: 80%;
             height: 100%;
@@ -409,6 +436,8 @@ body {
         height: 100%;
         /* border: 1px solid red; */
         position: relative;
+
+        background-color: white;
 
         >span {
             position: absolute;
@@ -464,6 +493,8 @@ body {
         min-width: 700px;
         height: 100%;
 
+        background-color: white;
+
         >figure {
             width: 100%;
             height: 100%;
@@ -480,7 +511,9 @@ body {
         min-width: 1600px;
         height: 100%;
         position: relative;
+
         /* border: 1px solid red; */
+        background-color: white;
 
         >span {
             position: absolute;
@@ -545,6 +578,8 @@ body {
         display: flex;
         justify-content: center;
 
+        background-color: white;
+
         >figure {
             width: 80%;
             height: 100%;
@@ -557,22 +592,36 @@ body {
         }
     }
 
-    >p {
-        width: 300px;
+    .p {
+        width: 410px;
         height: 100%;
-        color: black;
-        text-transform: uppercase;
-        font-size: 32px;
-        /* padding: 30px; */
-        text-align: justify;
-        text-align-last: left;
-        margin-top: 75px;
+        background-color: white;
+
+        >p {
+            color: black;
+            text-transform: uppercase;
+            font-size: 30px;
+            padding: 90px;
+            /* text-align: justify; */
+            text-align-last: left;
+            margin: 0 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+
+            &:last-of-type {
+                width: 281px;
+            }
+        }
     }
 
     .div7 {
         min-width: 1600px;
         height: 100%;
         position: relative;
+
+        background-color: white;
 
         >.rowDiv7 {
             width: 85%;
@@ -611,6 +660,8 @@ body {
         min-width: 700px;
         height: 100%;
 
+        background-color: white;
+
         >figure {
             width: 100%;
             height: 100%;
@@ -628,6 +679,8 @@ body {
         position: relative;
         width: 1400px;
         height: 100%;
+
+        background-color: white;
 
         >figure {
             width: 250px;
@@ -685,7 +738,122 @@ body {
             left: 2%;
             bottom: 3%;
             text-align: justify;
-            text-align-last: left;
+            text-align-last: center;
+            background-color: white;
+
         }
     }
+
+    .div10 {
+        width: 1600px;
+        min-width: 1600px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        background-color: white;
+
+        >figure {
+            width: 80%;
+            height: 100%;
+
+            >video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        >span {
+            text-transform: uppercase;
+            font-size: 70px;
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:first-of-type {
+                bottom: 8%;
+            }
+
+            &:last-of-type {
+                bottom: 0%;
+            }
+        }
+    }
+
+    .div11 {
+        min-width: 700px;
+        height: 140vh;
+        position: relative;
+        /* margin: 0 0 0 100px; */
+        top: 0px;
+        background-color: white;
+
+        >figure {
+            width: 80%;
+            height: 32%;
+            margin: 20px 0;
+
+            >img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .div12 {
+        min-width: 1600px;
+        height: 100%;
+        position: relative;
+        background-color: white;
+
+        >figure {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+
+            >video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        >span {
+            color: white;
+            position: absolute;
+            text-transform: uppercase;
+            font-size: 70px;
+
+            &:first-of-type {
+                top: 40%;
+                left: 43%;
+            }
+
+            &:last-of-type {
+                top: 50%;
+                left: 50%;
+            }
+        }
+
+        >p {
+            width: 460px;
+            color: white;
+            text-transform: capitalize;
+            font-size: 12px;
+            position: absolute;
+            left: 38%;
+            bottom: 4%;
+            text-align: justify;
+            text-align-last: center;
+        }
+    }
+}
+
+.sec6 {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
 }
