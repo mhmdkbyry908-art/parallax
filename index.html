@@ -189,7 +189,17 @@
             </div>
         </div>
     </section>
-    <div class="sec6"></div>
+    <footer>
+        <figure>
+            <img src="" alt="">
+        </figure>
+        <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </footer>
 </body>
 <script>
     const h1 = document.getElementById('h1')
@@ -212,6 +222,19 @@
     const sec5 = document.querySelector('.sec5')
     const bus = document.querySelector('.bus')
     const bus2 = document.querySelector('.bus2')
+    const span_div1 = document.querySelectorAll('.div1>span')
+    const p_div1 = document.querySelector('.div1>p')
+    const span_div3 = document.querySelectorAll('.div3>span')
+    const p_div3 = document.querySelector('.div3>p')
+    const span_div5 = document.querySelectorAll('.div5>span')
+    const p_div5 = document.querySelector('.div5>p')
+    const p_bus2 = document.querySelectorAll('.p>p')
+    const span_div9 = document.querySelectorAll('.div9>span')
+    const p_div9 = document.querySelector('.div9>p')
+    const span_div10 = document.querySelectorAll('.div10>span')
+    const div11 = document.querySelector('.div11')
+    const span_div12 = document.querySelectorAll('.div12>span')
+    const p_div12 = document.querySelector('.div12>p')
     const busStart = 4550;
     const busCenter = 4800;
     const busFadeEnd = 5000;
@@ -308,6 +331,61 @@
             bus2.scrollLeft = maxScroll * progress;
         } else {
             bus2.scrollLeft = 0;
+        }
+        ////////////////sec5 eleman /////////////
+        if (scrollTop > 5100) {
+            span_div1[0].style.color = 'rgba(0, 0, 0, 0.116)'
+            span_div1[0].style.left = '4%'
+            span_div1[1].style.color = 'black'
+            span_div1[1].style.left = '9%'
+            p_div1.style.color = 'rgba(0, 0, 0, 0.452)'
+            p_div1.style.right = '10%'
+        }
+        if (scrollTop > 9000) {
+            span_div3[0].style.color = 'rgba(0, 0, 0, 0.116)'
+            span_div3[0].style.left = '50%'
+            span_div3[1].style.color = 'black'
+            span_div3[1].style.left = '50%'
+            p_div3.style.color = 'rgba(0, 0, 0, 0.452)'
+            p_div3.style.left = '50%'
+        }
+        if (scrollTop > 11700) {
+            span_div5[0].style.color = 'rgba(0, 0, 0, 0.116)'
+            span_div5[0].style.left = '1%'
+            span_div5[1].style.color = 'black'
+            span_div5[1].style.left = '1%'
+            p_div5.style.color = 'rgba(0, 0, 0, 0.452)'
+            p_div5.style.right = '7%'
+        }
+        if (scrollTop > 15800) {
+            p_bus2[0].style.color = 'black'
+        }
+        if (scrollTop > 20600) {
+            span_div9[0].style.color = 'rgba(0, 0, 0, 0.116)'
+            span_div9[0].style.left = '35%'
+            span_div9[1].style.color = 'black'
+            span_div9[1].style.left = '42%'
+            p_div9.style.color = 'black'
+            p_div9.style.left = '7%'
+        }
+        if (scrollTop > 23000) {
+            span_div10[0].style.color = 'white'
+            span_div10[0].style.left = '50%'
+            span_div10[1].style.color = 'white'
+            span_div10[1].style.left = '50%'
+        }
+        if (scrollTop > 24700 && scrollTop < 26000) {
+            p_bus2[1].style.color = 'black'
+            div11.style.top = '-' + ((scrollTop - 24700) / 4.2) + 'px'
+
+        }
+        if (scrollTop > 27200) {
+            span_div12[0].style.color = 'white'
+            span_div12[0].style.left = '43%'
+            span_div12[1].style.color = 'white'
+            span_div12[1].style.left = '50%'
+            p_div12.style.color = 'white'
+            p_div12.style.left = '38%'
         }
     })
     ////////////cursor/////////////////////
