@@ -379,31 +379,31 @@ body {
             width: 200px;
             /* height: 300px; */
             text-transform: capitalize;
-            color: rgba(0, 0, 0, 0.452);
+            color: rgba(0, 0, 0, 0);
             font-size: 12px;
             text-align: justify;
             text-align-last: left;
             padding: 30px;
             position: absolute;
             top: 55%;
-            right: 10%;
+            right: 12%;
+            transition: 1s;
         }
 
         >span {
             position: absolute;
             text-transform: uppercase;
-
+            transition: 1s;
+            color: rgba(255, 255, 255, 0);
             &:first-of-type {
                 top: 18%;
-                left: 4%;
-                color: rgba(0, 0, 0, 0.116);
+                left: 2%;
                 font-size: 80px;
             }
 
             &:last-of-type {
                 top: 28%;
-                left: 9%;
-                color: black;
+                left: 7%;
                 font-size: 70px;
             }
         }
@@ -442,18 +442,17 @@ body {
         >span {
             position: absolute;
             text-transform: uppercase;
-            left: 50%;
+            left: 45%;
             transform: translate(-50%, -50%);
-
+            color: rgba(255, 255, 255, 0);
+            transition: 1s;
             &:first-of-type {
                 top: 18%;
-                color: rgba(0, 0, 0, 0.116);
                 font-size: 80px;
             }
 
             &:last-of-type {
                 top: 28%;
-                color: black;
                 font-size: 70px;
             }
         }
@@ -462,15 +461,16 @@ body {
             width: 450px;
             height: auto;
             text-transform: capitalize;
-            color: rgba(0, 0, 0, 0.452);
+            color: rgba(0, 0, 0, 0);
             font-size: 12px;
             text-align: justify;
             text-align-last: center;
             padding: 30px;
             position: absolute;
             top: 40%;
-            left: 50%;
+            left: 45%;
             transform: translate(-50%);
+            transition: 1s;
         }
 
         >figure {
@@ -517,18 +517,17 @@ body {
 
         >span {
             position: absolute;
-            left: 1%;
-
+            left: -1%;
+            color: rgba(255, 255, 255, 0);
+            transition: 1s;
             &:first-of-type {
                 bottom: 13%;
                 font-size: 70px;
-                color: rgba(0, 0, 0, 0.116);
             }
 
             &:last-of-type {
                 bottom: 3%;
                 font-size: 80px;
-                color: black;
             }
         }
 
@@ -560,7 +559,7 @@ body {
             width: 250px;
             /* height: 300px; */
             text-transform: capitalize;
-            color: rgba(0, 0, 0, 0.452);
+            color: rgba(0, 0, 0, 0);
             font-size: 12px;
             text-align: justify;
             text-align-last: left;
@@ -568,6 +567,7 @@ body {
             position: absolute;
             top: 18%;
             right: 7%;
+            transition: 1s;
         }
     }
 
@@ -598,7 +598,7 @@ body {
         background-color: white;
 
         >p {
-            color: black;
+            color: rgba(0, 0, 0, 0);
             text-transform: uppercase;
             font-size: 30px;
             padding: 90px;
@@ -609,7 +609,7 @@ body {
             justify-content: center;
             align-items: center;
             background-color: white;
-
+            transition: 1.4s;
             &:last-of-type {
                 width: 281px;
             }
@@ -714,28 +714,27 @@ body {
             position: absolute;
             font-size: 70px;
             text-transform: uppercase;
-
+            transition: 1s;
+            color: rgba(255, 255, 255, 0);
             &:first-of-type {
-                color: rgba(0, 0, 0, 0.116);
                 top: 40%;
-                left: 35%;
+                left: 32%;
             }
 
             &:last-of-type {
-                color: black;
                 top: 48%;
-                left: 42%;
+                left: 39%;
                 z-index: 999;
             }
         }
 
         >p {
             width: 145px;
-            color: black;
+            color: rgba(0, 0, 0, 0);
             text-transform: capitalize;
             font-size: 10px;
             position: absolute;
-            left: 2%;
+            left: 0%;
             bottom: 3%;
             text-align: justify;
             text-align-last: center;
@@ -767,11 +766,11 @@ body {
         >span {
             text-transform: uppercase;
             font-size: 70px;
-            color: white;
+            color: rgba(255, 255, 255, 0);
             position: absolute;
-            left: 50%;
+            left: 47%;
             transform: translate(-50%, -50%);
-
+            transition: 1s;
             &:first-of-type {
                 bottom: 8%;
             }
@@ -822,32 +821,34 @@ body {
         }
 
         >span {
-            color: white;
+            color: rgba(255, 255, 255, 0);
             position: absolute;
             text-transform: uppercase;
             font-size: 70px;
+            transition: 1s;
 
             &:first-of-type {
                 top: 40%;
-                left: 43%;
+                left: 40%;
             }
 
             &:last-of-type {
                 top: 50%;
-                left: 50%;
+                left: 47%;
             }
         }
 
         >p {
             width: 460px;
-            color: white;
+            color: rgba(255, 255, 255, 0);
             text-transform: capitalize;
             font-size: 12px;
             position: absolute;
-            left: 38%;
+            left: 34%;
             bottom: 4%;
             text-align: justify;
             text-align-last: center;
+            transition: 1s;
         }
     }
 }
